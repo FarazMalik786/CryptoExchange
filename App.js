@@ -1,20 +1,30 @@
+import { NavigationContainer } from '@react-navigation/native';
+import axios from 'axios';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View, FlatList } from 'react-native';
+import Navigation from './Source/navigation/Navigation';
+import WatchlistProvider from './Source/Contexts/WatchlistContext';
+
 
 export default function App() {
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer >
+      
+        <WatchlistProvider>
+          <View style={styles.container}>
+            <Navigation />
+            <StatusBar style="light" translucent={false} />
+          </View>
+        </WatchlistProvider>
+      
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
+
 });
