@@ -10,14 +10,12 @@ export default function App() {
 
   return (
     <NavigationContainer >
-      
         <WatchlistProvider>
           <View style={styles.container}>
             <Navigation />
-            <StatusBar style="light" translucent={false} />
+            <StatusBar  backgroundColor='black' style="light" translucent={false}/>
           </View>
         </WatchlistProvider>
-      
     </NavigationContainer>
   );
 }
